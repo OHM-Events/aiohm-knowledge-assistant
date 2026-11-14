@@ -1,0 +1,329 @@
+/**
+ * AIOHM AI Provider Icons
+ * Styling for AI provider selection with icons
+ */
+
+/* AI Provider Selection with Icons */
+.aiohm-provider-selection {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px;
+	margin: 15px 0;
+}
+
+/* 6-Column Grid Layout for all providers */
+.aiohm-provider-grid {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	gap: 12px;
+	margin: 15px 0;
+}
+
+
+@media (max-width: 1400px) {
+	.aiohm-provider-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media (max-width: 1000px) {
+	.aiohm-provider-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 768px) {
+	.aiohm-provider-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+.aiohm-provider-option {
+	position: relative;
+	border: 2px solid #ddd;
+	border-radius: 6px;
+	padding: 12px;
+	min-width: 90px;
+	text-align: center;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	background: #fff;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.aiohm-provider-option:hover {
+	border-color: #007cba;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+	transform: translateY(-2px);
+}
+
+.aiohm-provider-option.selected {
+	border-color: #007cba;
+	background: #f0f8ff;
+	box-shadow: 0 4px 12px rgba(0,124,186,0.2);
+}
+
+.aiohm-provider-option input[type="radio"] {
+	position: absolute;
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.aiohm-provider-icon {
+	width: 32px;
+	height: 32px;
+	margin: 0 auto 8px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.aiohm-provider-icon svg {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.aiohm-provider-icon img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	border-radius: 4px;
+}
+
+.aiohm-provider-name {
+	font-weight: 600;
+	color: #333;
+	font-size: 13px;
+	margin-bottom: 3px;
+}
+
+.aiohm-provider-description {
+	font-size: 11px;
+	color: #666;
+	line-height: 1.2;
+}
+
+/* Selected state indicator */
+.aiohm-provider-option.selected::after {
+	content: '✓';
+	position: absolute;
+	top: 5px;
+	right: 8px;
+	background: #007cba;
+	color: white;
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+/* Provider-specific icon styling */
+.aiohm-provider-option[data-provider="openai"] .aiohm-provider-icon {
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.aiohm-provider-option[data-provider="google"] .aiohm-provider-icon {
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.aiohm-provider-option[data-provider="anthropic"] .aiohm-provider-icon {
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.aiohm-provider-option[data-provider="ollama"] .aiohm-provider-icon {
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+	.aiohm-provider-selection {
+		flex-direction: column;
+	}
+
+	.aiohm-provider-option {
+		min-width: auto;
+		display: flex;
+		align-items: center;
+		text-align: left;
+		padding: 12px;
+	}
+
+	.aiohm-provider-icon {
+		width: 32px;
+		height: 32px;
+		margin: 0 12px 0 0;
+		flex-shrink: 0;
+	}
+
+	.aiohm-provider-info {
+		flex: 1;
+	}
+
+	.aiohm-provider-option.selected::after {
+		position: static;
+		margin-left: auto;
+	}
+}
+
+/* Settings form integration */
+.aiohm-settings-row .aiohm-provider-selection {
+	margin-top: 10px;
+}
+
+.aiohm-settings-field-description {
+	margin-bottom: 15px;
+	color: #666;
+	font-style: italic;
+}
+
+/* API Key field styling when provider is selected */
+.aiohm-api-key-field {
+	margin-top: 20px;
+	padding: 15px;
+	background: #f9f9f9;
+	border-radius: 6px;
+	border-left: 4px solid #007cba;
+}
+
+.aiohm-api-key-field label {
+	font-weight: 600;
+	display: block;
+	margin-bottom: 8px;
+}
+
+.aiohm-api-key-field input {
+	width: 100%;
+	padding: 8px 12px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	font-family: monospace;
+}
+
+.aiohm-api-key-field .description {
+	font-size: 12px;
+	color: #666;
+	margin-top: 5px;
+}
+
+/* Loading state */
+.aiohm-provider-option.loading {
+	opacity: 0.6;
+	pointer-events: none;
+}
+
+.aiohm-provider-option.loading::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 20px;
+	height: 20px;
+	margin: -10px 0 0 -10px;
+	border: 2px solid #f3f3f3;
+	border-top: 2px solid #007cba;
+	border-radius: 50%;
+	animation: aiohm-provider-spin 1s linear infinite;
+}
+
+@keyframes aiohm-provider-spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+/* Error state */
+.aiohm-provider-option.error {
+	border-color: #dc3232;
+	background: #ffeaea;
+}
+
+.aiohm-provider-option.error .aiohm-provider-name {
+	color: #dc3232;
+}
+
+/* Success state */
+.aiohm-provider-option.success {
+	border-color: #46b450;
+	background: #f0fff0;
+}
+
+.aiohm-provider-option.success::after {
+	background: #46b450;
+}
+
+/* Disabled state for providers without API keys */
+.aiohm-provider-option.disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+	background: #f9f9f9;
+	border-color: #ccc;
+}
+
+.aiohm-provider-option.disabled:hover {
+	transform: none;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	border-color: #ccc;
+}
+
+.aiohm-provider-option.disabled .aiohm-provider-name {
+	color: #999;
+}
+
+.aiohm-provider-option.disabled .aiohm-provider-description {
+	color: #aaa;
+	font-style: italic;
+}
+
+/* Overlay for disabled providers */
+.aiohm-provider-overlay {
+	position: absolute;
+	top: 5px;
+	right: 8px;
+	background: rgba(0,0,0,0.1);
+	color: #666;
+	border-radius: 50%;
+	width: 24px;
+	height: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 14px;
+}
+
+/* OHM Style save button positioning */
+.aiohm-save-default-provider {
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	border: none;
+	color: white;
+	padding: 10px 20px;
+	border-radius: 5px;
+	font-weight: 600;
+	font-size: 14px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.aiohm-save-default-provider:hover {
+	background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+	transform: translateY(-1px);
+	box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.aiohm-save-default-provider:active {
+	transform: translateY(0);
+}
+
+.aiohm-save-default-provider:focus {
+	outline: 2px solid #667eea;
+	outline-offset: 2px;
+}

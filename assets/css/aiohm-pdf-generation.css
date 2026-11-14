@@ -1,0 +1,72 @@
+/**
+ * AIOHM PDF Generation Styles
+ * Used for PDF export functionality
+ */
+
+body {
+	font-family: Arial, sans-serif;
+	line-height: 1.6;
+	margin: 40px;
+}
+
+.chapter-title {
+	font-size: 18px;
+	font-weight: bold;
+	margin: 20px 0 10px 0;
+	color: #333;
+	border-bottom: 2px solid #0073aa;
+	padding-bottom: 5px;
+}
+
+.question {
+	font-weight: bold;
+	color: #0073aa;
+	margin: 15px 0 5px 0;
+}
+
+.answer {
+	margin: 5px 0 15px 20px;
+	padding: 10px;
+	background: #f9f9f9;
+	border-left: 3px solid #0073aa;
+}
+
+.message-block {
+	margin: 10px 0;
+}
+
+.message-user {
+	background: #e7f3ff;
+	padding: 10px;
+	border-radius: 5px;
+	margin: 5px 0;
+}
+
+.message-assistant {
+	background: #f0f0f0;
+	padding: 10px;
+	border-radius: 5px;
+	margin: 5px 0;
+}
+
+/* Print-specific styles for better PDF output */
+@media print {
+	body {
+		margin: 20px;
+		font-size: 12pt;
+		line-height: 1.4;
+	}
+
+	.chapter-title {
+		page-break-after: avoid;
+		font-size: 14pt;
+	}
+
+	.message-block {
+		page-break-inside: avoid;
+	}
+
+	.question {
+		page-break-after: avoid;
+	}
+}

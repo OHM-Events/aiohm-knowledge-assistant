@@ -1,0 +1,74 @@
+{
+  "name": "aiohm/knowledge-assistant",
+  "description": "Open source AI knowledge assistant for WordPress: chatbot, brand voice, local AI with Ollama, MCP access and white-label mode.",
+  "type": "wordpress-plugin",
+  "version": "3.0.0",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "OHM Events Agency",
+      "email": "info@ohm.events",
+      "homepage": "https://www.ohm.events"
+    }
+  ],
+  "homepage": "https://knowledge.aiohm.app/",
+  "support": {
+    "issues": "https://github.com/AIOHM/aiohm-knowledge-assistant/issues",
+    "source": "https://github.com/AIOHM/aiohm-knowledge-assistant"
+  },
+  "require": {
+    "php": ">=7.4",
+    "smalot/pdfparser": "^2.11",
+    "symfony/polyfill-mbstring": "^1.32"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.13",
+    "wp-coding-standards/wpcs": "*",
+    "phpunit/phpunit": "^9.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "AIOHM\\KnowledgeAssistant\\": "includes/"
+    }
+  },
+  "extra": {
+    "wordpress-plugin": {
+      "plugin-file": "aiohm-knowledge-assistant.php",
+      "version": "3.0.0",
+      "requires": "6.2",
+      "tested": "7.0",
+      "requires-php": "7.4"
+    }
+  },
+  "keywords": [
+    "wordpress",
+    "ai",
+    "chatbot",
+    "knowledge-base",
+    "ollama",
+    "local-ai",
+    "white-label",
+    "agency",
+    "open-source",
+    "mcp"
+  ],
+  "scripts": {
+    "test": "phpunit",
+    "deploy": "echo 'Use GitHub Actions for deployment'",
+    "build": [
+      "composer install --no-dev --optimize-autoloader",
+      "echo 'Build complete - ready for deployment'"
+    ]
+  },
+  "config": {
+    "platform": {
+      "php": "7.4"
+    },
+    "optimize-autoloader": true,
+    "classmap-authoritative": true,
+    "sort-packages": true,
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  }
+}
