@@ -13,8 +13,8 @@
   ],
   "homepage": "https://knowledge.aiohm.app/",
   "support": {
-    "issues": "https://github.com/AIOHM/aiohm-knowledge-assistant/issues",
-    "source": "https://github.com/AIOHM/aiohm-knowledge-assistant"
+    "issues": "https://github.com/OHM-Events/aiohm-knowledge-assistant/issues",
+    "source": "https://github.com/OHM-Events/aiohm-knowledge-assistant"
   },
   "require": {
     "php": ">=7.4",

@@ -2,7 +2,7 @@
 Contributors: ohmevents
 Tags: ai assistant, knowledge base, chatbot, brand voice, personalized ai
 Requires at least: 6.2
-Tested up to: 7.0
+Tested up to: 7.1
 Stable tag: 3.0.0
 Requires PHP: 7.4
 License: GPLv2 or later
@@ -157,6 +157,15 @@ Yes. The plugin integrates with Paid Memberships Pro and supports custom user ro
 = What happens if the AI doesn't know something? =
 
 The AI will indicate when it lacks sufficient information and direct users to contact you directly. It doesn't generate responses from outdated internet information or make up answers.
+
+== About AIOHM, OHM Events and AdiSaan ==
+
+This plugin gives one WordPress site an assistant that knows its content. AIOHM does the same for a whole marketing operation: brand memory and knowledge for every project in one private workspace, connected to WordPress, email and social publishing, with an approval step before anything goes out.
+
+* [AIOHM](https://aiohm.org): private marketing infrastructure with memory. Human leads. Muse orchestrates. Agents execute. You approve.
+* [OHM Events](https://www.ohm.events): the event growth agency behind AIOHM, with more free tools in its [Open source shop](https://www.ohm.events/product-category/open-source/).
+* [AdiSaan](https://adisaan.com): an open observatory where people and AI models answer the same real question side by side.
+* Source code: [GitHub](https://github.com/OHM-Events/aiohm-knowledge-assistant)
 
 == Changelog ==
 
